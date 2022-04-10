@@ -1,4 +1,6 @@
-# UserService
+# UserService (Part microservice 1 of 2)
+
+## Second part microservice https://github.com/yhtyyar/DepartamentService
 
 ## Installation
 
