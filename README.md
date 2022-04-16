@@ -4,14 +4,14 @@
 
 
 
-                GNU AFFERO GENERAL PUBLIC LICENSE
-                   Version 3, 19 November 2007
+                                                   GNU AFFERO GENERAL PUBLIC LICENSE
+                                                     Version 3, 19 November 2007
 
 Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
 Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
 
-                            Preamble
+                                                            Preamble
 
 The GNU Affero General Public License is a free, copyleft license for
 software and other kinds of works, specifically designed to ensure
@@ -72,19 +72,12 @@ modification follow.
  git clone https://github.com/yhtyyar/UserService
  ````
  
-## Build project
-
- ````
- mvn clean install
- ````
- 
  ## API 
  
- <h4> GET    (http://localhost:8080/api/v1/users/{ id })    Get User by id     </h4>
- <h4> GET    (http://localhost:8080/api/v1/users/)          Get all User       </h4>
- <h4> POST   (http://localhost:8080/api/v1/users/{ User })  Create User        </h4>
- <h4> PUT    (http://localhost:8080/api/v1/users/{ User })  Update User        </h4>
- <h4> DELETE (http://localhost:8080/api/v1/users/{ id })    Delete User by id  </h4>
+ ##  <a href="http://localhost:8082/swagger-ui/index.html"> Swagger </a>
+
+
+![Image alt](https://github.com/yhtyyar/UserService/raw/master/src/main/resources/screenshots/Swagger_UI_UserService.png)
  
  
  ## Data for authorization
@@ -111,4 +104,8 @@ modification follow.
  admin
  ````
  
- ## Authorization link:  http://localhost:8080/auth/login 
+ ## Authorization link:  http://localhost:8082/auth/login 
+ 
+ ## Before launch, you need to add your data to application.properties
+
+# Used technologies: Java 11, Spring Boot, Spring Security, PostgresSQL, Flyway, Lombok, Maven, Open API(swagger)
