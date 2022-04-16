@@ -65,6 +65,8 @@ package com.example.UserService.rest;
 import com.example.UserService.dto.UserDto;
 import com.example.UserService.model.User;
 import com.example.UserService.service.impl.UserServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -81,6 +83,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/users")
+@Tag(name = "User Rest Controller V1", description = "Controller to illustrate swagger operation")
 public class UserRestControllerV1 {
 
 
@@ -88,6 +91,7 @@ public class UserRestControllerV1 {
 
     @PostMapping
     @PreAuthorize("hasAuthority('users:write')")
+    @Operation(summary = "Add new \"User\"")
     public ResponseEntity<?> create(@RequestBody @NonNull UserDto userDto) {
         log.info("Inside create method in UserRestControllerV1 {}", userDto.toEntity());
         User user = userService.create(userDto.toEntity());
@@ -97,6 +101,7 @@ public class UserRestControllerV1 {
 
     @PutMapping
     @PreAuthorize("hasAuthority('users:write')")
+    @Operation(summary = "Update \"User\"")
     public ResponseEntity<?> update(@RequestBody @NonNull UserDto userDto) {
         log.info("Inside update method in UserRestControllerV1 {}", userDto.toEntity());
         User user = userService.update(userDto.toEntity());
@@ -106,6 +111,7 @@ public class UserRestControllerV1 {
 
     @GetMapping
     @PreAuthorize("hasAuthority('users:read')")
+    @Operation(summary = "Get all \"User\" list")
     public ResponseEntity<?> getAll() {
         log.info("Inside getAll method in UserRestControllerV1");
         List<User> userList = userService.getAll();
@@ -120,6 +126,7 @@ public class UserRestControllerV1 {
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('users:read')")
+    @Operation(summary = "Get \"User\" by id")
     public ResponseEntity<?> getById(@PathVariable("id") Long id) {
         log.info("Inside getById method in UserRestControllerV1 {}", id);
         User user = userService.getById(id);
@@ -129,6 +136,7 @@ public class UserRestControllerV1 {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('users:write')")
+    @Operation(summary = "Delete \"User\" by id")
     public ResponseEntity<?> deleteById(@PathVariable("id") Long id) {
         log.info("Inside deleteById method in UserRestControllerV1 {}", id);
         userService.deleteById(id);
