@@ -1,7 +1,8 @@
-# UserService (Part microservice 1 of 2)
+# UserService (Part microservice 1 of 3)
 
 ## Second part microservice https://github.com/yhtyyar/DepartamentService
 
+## Third part microservice https://github.com/yhtyyar/InorganicChemistryService
 
 
                                                    GNU AFFERO GENERAL PUBLIC LICENSE
